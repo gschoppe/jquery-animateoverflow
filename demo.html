@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+        <script src="src/jquery-animateoverflow.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.default').animateOverflow();
+                $('.linear').animateOverflow({
+                    animation : 'linear'
+                });
+            });
+        </script>
+        <style>
+            pre {
+                margin-left: 0;
+                text-align: left;
+                background-color: #ddd;
+                border: 1px solid #eee;
+                padding: 10px;
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1>jQuery Animate Overflow Plugin</h1>
+            <b>&copy;2013 - Gregory J Schoppe</b> - <i><a href="http://gschoppe.com">http://gschoppe.com</a></i>
+            <br/><br/>
+            <h3>Overview</h3>
+            <p style="text-align: left;width: 650px; border-top: 1px solid #ddd;">
+                Animate Overflow is a simple plugin I designed to emulate an MP3
+                Player's display.  It allows you to display an arbitrary length 
+                of data in a single line of fixed width, with no added markup. 
+            </p>
+            <h3>Demos</h3>
+            <p style="text-align: left;width: 650px; border-top: 1px solid #ddd;"></p>
+            <table>
+                <tr>
+                    <th><b>PingPong Demo</b></th>
+                    <th><b>Linear Demo</b></th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">
+                        <div class="default" style="width: 200px;border: 1px solid #ccc;margin: 0 auto;text-align: left;">This is short</div>
+                        <div class="default" style="width: 200px;border: 1px solid #ccc;margin: 0 auto;text-align: left;">This is loooooooooooooooooooooooooooooooong</div>
+                    </td>
+                    <td style="padding: 10px;">
+                        <div class="linear" style="width: 200px;border: 1px solid #ccc;margin: 0 auto;text-align: left;">This is short</div>
+                        <div class="linear" style="width: 200px;border: 1px solid #ccc;margin: 0 auto;text-align: left;">This is loooooooooooooooooooooooooooooooong</div>
+                    </td>
+                </tr>
+            </table>
+            <h3>Usage</h3>
+            <p style="text-align: left;width: 650px; border-top: 1px solid #ddd;">
+                In the minimal setup, all you need to do is include the plugin after your call to jQuery,
+                choose a block-level element or group of elements, and apply the animation like so:
+            </p>
+            <pre style="width: 500px;">$('.elements').animateOverflow();</pre>
+            <p style="text-align: left;width: 650px;">
+                To take advantage of all the settings, the call would look
+                more like:
+            </p>
+            <pre style="width: 500px;">
+$('.elements').animateOverflow(
+    animation: 'pingpong', // options are 'pingpong' and 'linear'.  default is 'pingpong'
+    step_speed : 30,       // sets time between each animation step, in milliseconds.  default is 30.
+    delay      : 600,      // sets delay between each loop of the animation, in milliseconds.  default is 600.
+    divider    : ' | '     // sets divider string used between loops of linear animation.  default is ' | '
+);
+            </pre>
+            <br/><br/>
+        </center>
+    </body>
+</html>
